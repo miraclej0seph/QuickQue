@@ -4,10 +4,9 @@ public partial class MainPage : ContentPage
 {
     Dictionary<string, int> cafeSpeeds = new()
     {
-        { "Starbrew", 2 },     // fast
-        { "BeanCo", 3 },       // medium
-        { "LatteLand", 4 },    // slow
-        { "BrewHub", 5 }       // very slow
+        { "Main Campus Café", 2 },     // fast
+        { "Library Café", 3 },       // medium
+        { "Student Hub Café", 4 },    // slow
     };
 
     public MainPage()
