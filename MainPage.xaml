@@ -5,44 +5,93 @@
     x:Class="QuickQue.MainPage">
 
     <ScrollView>
+
         <VerticalStackLayout Padding="20" Spacing="20">
 
-            <Label Text="QuickQueue"
-           FontSize="32"
-           HorizontalOptions="Center"/>
+            <!-- Header -->
+            <Border
+                Background="{StaticResource CafeVibrant}"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 0"
+                Padding="20"
+                Margin="0,0,0,10">
 
-            <Picker x:Name="CafePicker"
-            Title="Select Café"/>
+                <Label Text="QuickQueue"
+                       TextColor="White"
+                       FontSize="32"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold" />
+            </Border>
 
-            <Entry x:Name="QueueEntry"
-           Placeholder="People waiting"
-           Keyboard="Numeric"/>
+            <!-- Input Card -->
+            <Border>
 
-            <Button Text="Calculate"
-            Clicked="OnCalculateClicked"/>
+                <VerticalStackLayout Spacing="15">
 
-            <Button Text="Reset"
-            Clicked="OnResetClicked"/>
+                    <Label Text="Select Café"
+                           Style="{StaticResource SectionTitle}" />
 
-            <Label x:Name="WaitTimeLabel"
-           FontSize="20"/>
+                    <Border
+                        Background="{StaticResource CafeCard}"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 12"
+                        Padding="12"
+                        Margin="0,10">
 
-            <Label x:Name="StatusLabel"
-           FontSize="20"/>
+                        <Grid ColumnDefinitions="*,Auto">
 
-            <Label x:Name="RecommendationLabel"
-           FontSize="18"/>
+                            <Picker x:Name="CafePicker"
+                                    Title="Select Café"
+                                    BackgroundColor="Transparent"
+                                    TextColor="{StaticResource CafeText}" />
 
-            <!-- Estimated Completion Time -->
-            <Label x:Name="CompletionTimeLabel"
-           FontSize="18"/>
+                            <Label Text="▼"
+                                   Grid.Column="1"
+                                   TextColor="{StaticResource CafeText}"
+                                   VerticalOptions="Center"
+                                   Margin="10,0,0,0" />
 
-            <!-- Progress Indicator -->
-            <ProgressBar x:Name="QueueProgress"
-                 Progress="0"
-                 HeightRequest="10"/>
+                        </Grid>
+
+                    </Border>
+
+                    <Label Text="People waiting"
+                           Style="{StaticResource SectionTitle}" />
+
+                    <Entry x:Name="QueueEntry"
+                           Placeholder="Enter number"
+                           Keyboard="Numeric" />
+
+                    <Button Text="Calculate"
+                            Clicked="OnCalculateClicked" />
+
+                    <Button Text="Reset"
+                            BackgroundColor="{StaticResource CafeAccent}"
+                            TextColor="White"
+                            Clicked="OnResetClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- Results Card -->
+            <Border>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label x:Name="WaitTimeLabel" FontSize="20" />
+                    <Label x:Name="StatusLabel" FontSize="20" />
+                    <Label x:Name="RecommendationLabel" FontSize="18" />
+                    <Label x:Name="CompletionTimeLabel" FontSize="18" />
+
+                    <ProgressBar x:Name="QueueProgress" Progress="0" />
+
+                </VerticalStackLayout>
+
+            </Border>
 
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>
