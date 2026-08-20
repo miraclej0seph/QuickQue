@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:QuickQue.Models"
+             x:Class="QuickQue.Views.History"
+             Title="History">
+    
+    <CollectionView x:Name="HistoryList">
+        <CollectionView.EmptyView>
+            <Label Text="No queue history yet." />
+        </CollectionView.EmptyView>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:QueueHistoryItem">
+                <VerticalStackLayout>
+                    <Label Text="{Binding CafeName}" />
+                    <Label Text="{Binding PeopleAhead, StringFormat='People waiting: {0}'}" />
+                    <Label Text="{Binding WaitTimeMinutes, StringFormat='Estimated wait: {0} minutes'}" />
+                    <Label Text="{Binding EstimatedReadyAt, StringFormat='Ready by: {0:h:mm tt}'}" />
+                    <Label Text="{Binding CalculatedAt, StringFormat='Calculated: {0:g}'}" />
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

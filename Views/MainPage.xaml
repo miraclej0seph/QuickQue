@@ -2,7 +2,7 @@
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="QuickQue.MainPage">
+    x:Class="QuickQue.Views.MainPage">
 
     <ScrollView>
 
@@ -75,7 +75,7 @@
             </Border>
 
             <!-- Results Card -->
-            <Border>
+            <Border x:Name="ResultsCard">
 
                 <VerticalStackLayout Spacing="10">
 
