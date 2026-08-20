@@ -3,12 +3,16 @@
     x:Class="QuickQue.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:QuickQue"
+    xmlns:views="clr-namespace:QuickQue.Views"
     Title="QuickQue">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="History"
+        ContentTemplate="{DataTemplate views:History}"
+        Route="History" />
 
 </Shell>
