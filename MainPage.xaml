@@ -8,11 +8,16 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
+                x:Name="CafeImage"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+                HorizontalOptions="Fill"/>
 
+            <Label
+                Text="Select a Cafe"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+            <!-- Café Location picker -->
             <Label
                 Text="Café Location"
                 FontSize="18" 
@@ -20,7 +25,8 @@
 
             <Picker
                 x:Name="CafePicker"
-                Title="Select a café">
+                Title="Select a café"
+                SelectedIndexChanged="CafePicker_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>Main Campus Café</x:String>
                     <x:String>Library Café</x:String>
@@ -28,12 +34,16 @@
                 </Picker.Items>
             </Picker>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            <!-- recommendation based on how many people -->
+            <Label
+                Text="Recommendation"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Label
+                x:Name="RecommendationLabel"
+                Text="Your recommendation will appear here."
+                FontSize="16" />
         </VerticalStackLayout>
     </ScrollView>
 
