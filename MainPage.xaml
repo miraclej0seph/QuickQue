@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuickQue.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                x:Name="CafeImage"
+                Aspect="AspectFit"
+                HorizontalOptions="Fill"/>
+
+            <Label
+                Text="Select a Cafe"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+            <!-- Café Location picker -->
+            <Label
+                Text="Café Location"
+                FontSize="18" 
+                FontAttributes="Bold" />
+
+            <Picker
+                x:Name="CafePicker"
+                Title="Select a café"
+                SelectedIndexChanged="CafePicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Main Campus Café</x:String>
+                    <x:String>Library Café</x:String>
+                    <x:String>Student Hub Café</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- recommendation based on how many people -->
+            <Label
+                Text="Recommendation"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Label
+                x:Name="RecommendationLabel"
+                Text="Your recommendation will appear here."
+                FontSize="16" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
