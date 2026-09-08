@@ -10,7 +10,6 @@ public partial class MainPage : ContentPage
         { "Main Campus Café", 2 },     // fast
         { "Library Café", 3 },       // medium
         { "Student Hub Café", 4 },    // slow
-        { "BrewHub", 5 }       // very slow
     };
 
     public MainPage()
